@@ -15,13 +15,17 @@ pub mod raffle {
     pub fn upload(
         _ctx: Context<UploadAccount>,
         start_date: Option<i64>, 
-        end_date: i64
+        end_date: i64,
+        ticket_numbers: u64,
+        limit_tickets: u64,
     ) -> Result<()> {
         _ctx.accounts.process(
             *_ctx.bumps.get("escrow").unwrap(),
             *_ctx.bumps.get("vault").unwrap(),
             start_date,
-            end_date
+            end_date,
+            ticket_numbers,
+            limit_tickets
         )
     }
 
