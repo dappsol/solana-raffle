@@ -1,0 +1,15 @@
+[features]
+seeds = false
+[programs.devnet]
+raffle = "EpNpQFNZMcUJjvmUdYi8KvrGK6wqeu8RzhxdUGMypeNh"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+# wallet = "/home/kts/.config/solana/id.json"
+wallet = "/home/Guardian/dope-pirates-staking-contract-v3/client.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

@@ -1,0 +1,30 @@
+[package]
+name = "raffle"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "raffle"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]
+anchor-lang = "0.24.2"
+anchor-spl = "0.24.2"
+spl-associated-token-account = "1.0.3"
+solana-program = "1.9.13"
+
+[dev-dependencies]
+# solana-program-test = "1.10.0"
+# solana-sdk = "1.9.16"
+# spl-token = { version = "3.3.0", features = [ "no-entrypoint" ] }
