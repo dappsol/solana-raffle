@@ -42,8 +42,11 @@ pub struct Lottery {
 
     /// limit tickets
     pub limit_tickets: u64,
+
+    /// winners
+    pub winners: u64,
 }
 
 impl Lottery {
-    pub const LEN: usize = 8 + 1 + 32 + 32 + 32 + 32 + 32 + 9 + 8 + 8 + 8 + 8;
+    pub const LEN: usize = 8 + 1 + 32 + 32 + 32 + 32 + 32 + 9 + 8 + 8 + 8 + 8 + 8;
 }

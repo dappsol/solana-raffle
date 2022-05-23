@@ -11,6 +11,7 @@ impl<'info> UploadAccount<'info> {
         end_date: UnixTimestamp,
         ticket_numbers: u64,
         limit_tickets: u64,
+        winners: u64,
     ) -> Result<()> {
         self.lottery.status = state::LotteryStatus::Opened;
 
@@ -27,6 +28,7 @@ impl<'info> UploadAccount<'info> {
         self.lottery.ticket_numbers = ticket_numbers;
         self.lottery.remain_tickets = ticket_numbers;
         self.lottery.limit_tickets = limit_tickets;
+        self.lottery.winners = winners;
 
         // create 'spl' escrow account to hold user's nft
         utils::sys_create_account(
