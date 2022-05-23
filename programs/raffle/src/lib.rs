@@ -18,6 +18,7 @@ pub mod raffle {
         end_date: i64,
         ticket_numbers: u64,
         limit_tickets: u64,
+        winners: u64,
     ) -> Result<()> {
         _ctx.accounts.process(
             *_ctx.bumps.get("escrow").unwrap(),
@@ -25,7 +26,8 @@ pub mod raffle {
             start_date,
             end_date,
             ticket_numbers,
-            limit_tickets
+            limit_tickets,
+            winners
         )
     }
 
@@ -45,26 +47,7 @@ pub mod raffle {
             *_ctx.bumps.get("escrow").unwrap(),
         )
     }
-
-    // pub fn create_vault (_ctx: Context<VaultAccount>, _bump_vault: u8) -> Result<()> {
-    //     Ok(())
-    // }
 }
-
-// #[derive(Accounts)]
-// #[instruction(bump: u8)]
-// pub struct VaultAccount<'info> {
-//     #[account(init, seeds = [b"vault".as_ref()], bump, payer = admin, space = 9)]
-//     pub vault: Account<'info, Vault>,
-//     #[account(mut)]
-//     pub admin: Signer<'info>,
-//     pub system_program: Program<'info, System>
-// }
-
-// #[account]
-// pub struct Vault {
-//     pub bump_vault: u8
-// }
 
 #[derive(Accounts)]
 pub struct UploadAccount<'info> {
